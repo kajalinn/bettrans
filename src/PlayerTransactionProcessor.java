@@ -7,13 +7,13 @@ public class PlayerTransactionProcessor {
         return data.lines().map(this::createPlayerTransaction).collect(Collectors.toList());
     }
 
+    //initialize player data
     public PlayerTransaction createPlayerTransaction(String line){
         String[] fields = line.split(",");
-        //initialize player data
         String playerID = fields[0];
         String actionType = fields[1];
         String matchID = fields[2].isEmpty() ? null : fields[2];
-        int amount = Integer.parseInt(fields[3]);
+        double amount = Integer.parseInt(fields[3]);
         String betChoice = fields.length > 4 && !fields[4].isEmpty() ? fields[4] : null;
 
         return new PlayerTransaction(playerID, actionType, matchID, amount, betChoice);

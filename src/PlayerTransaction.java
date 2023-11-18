@@ -4,10 +4,10 @@ public class PlayerTransaction {
     String player_id;
     String action_type;
     String match_id;
-    int amount;
+    double amount;
     String bet_choice;
 
-    public PlayerTransaction(String player_id, String action_type, String match_id, int amount, String bet_choice){
+    public PlayerTransaction(String player_id, String action_type, String match_id, Double amount, String bet_choice){
         this.player_id = player_id;
         this.action_type = action_type;
         this.match_id = match_id;
@@ -27,11 +27,22 @@ public class PlayerTransaction {
         return match_id;
     }
 
-    public int getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
     public String getBetChoice() {
         return bet_choice;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s %s %d %s",
+                getPlayerID(), getActionType(), getMatchID(), getAmount().longValue(), getBetChoice());
+    }
+
+
 }
+
+
+
