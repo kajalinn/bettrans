@@ -31,7 +31,7 @@ The Transaction Processor reads player and match data from input files, processe
 
 ### Output
 
-The processor generates an output file named results.txt. The output includes:
+The processor generates an output file named result.txt. The output includes:
 
  - Legitimate Players:
    List of legitimate player IDs, final balance, and betting win rate.
