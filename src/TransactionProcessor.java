@@ -52,32 +52,29 @@ public class TransactionProcessor {
         long casinoCoinChanges = casino.getTotalBalance();
         String coinChangeResult = String.valueOf(casinoCoinChanges);
 
-        System.out.println(legitimatePlayers);
-        System.out.println(illegitimatePlayerTransactions);
-        System.out.println(List.of(coinChangeResult));
 
         // Write results to a file
-//        try {
-//            Path resultsFilePath = Path.of("src/result.txt");
-//            if (!legitimatePlayers.isEmpty()) {
-//                Files.write(resultsFilePath, legitimatePlayers, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-//                Files.write(resultsFilePath, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-//            } else {
-//                Files.write(resultsFilePath, System.lineSeparator().getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
-//            }
-//
-//            if (!illegitimatePlayerTransactions.isEmpty()) {
-//                Files.write(resultsFilePath, illegitimatePlayerTransactions, StandardOpenOption.APPEND);
-//                Files.write(resultsFilePath, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-//            } else {
-//                Files.write(resultsFilePath, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-//            }
-//
-//            Files.write(resultsFilePath, List.of(coinChangeResult), StandardOpenOption.APPEND);
-//            Files.write(resultsFilePath, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Path resultsFilePath = Path.of("src/result.txt");
+            if (!legitimatePlayers.isEmpty()) {
+                Files.write(resultsFilePath, legitimatePlayers, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+                Files.write(resultsFilePath, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+            } else {
+                Files.write(resultsFilePath, System.lineSeparator().getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
+            }
+
+            if (!illegitimatePlayerTransactions.isEmpty()) {
+                Files.write(resultsFilePath, illegitimatePlayerTransactions, StandardOpenOption.APPEND);
+                Files.write(resultsFilePath, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+            } else {
+                Files.write(resultsFilePath, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+            }
+
+            Files.write(resultsFilePath, List.of(coinChangeResult), StandardOpenOption.APPEND);
+            Files.write(resultsFilePath, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
