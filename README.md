@@ -14,11 +14,11 @@ These instructions will help you set up and run the Transaction Processor on you
 ### Installation
 
 1. Clone the repository to your local machine.
-
 ```bash
 git clone git@github.com:kajalinn/bettrans.git
-Open the project in your preferred IDE.
-Run the Main class to execute the transaction processing.
+```
+2. Open the project in your preferred IDE.
+3. Run the Main class to execute the transaction processing.
 
 ### Usage
 
@@ -31,7 +31,7 @@ The Transaction Processor reads player and match data from input files, processe
 
 ### Output
 
-The processor generates an output file named results.txt. The output includes:
+The processor generates an output file named result.txt. The output includes:
 
  - Legitimate Players:
    List of legitimate player IDs, final balance, and betting win rate.
